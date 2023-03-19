@@ -34,16 +34,21 @@ Manage notes faster and more efficiently than a typical mouse/GUI driven applica
 
 ## User Stories
 
-| Version | As a(n) ...                            | I want to ...                                                          | So that I can ...                                                |
-|---------|----------------------------------------|------------------------------------------------------------------------|------------------------------------------------------------------|
-| v1.0    | user                                   | add notes                                                              | view them later                                                  |
-| v1.0    | user                                   | delete notes                                                           | replace the existing notes                                       |
-| v1.0    | user                                   | save notes                                                             | reuse the saved data after closing and reopening the app         |
-| v1.0    | tutor teaching CS2040C                 | organize my notes by topic                                             | easily find the relevant content                                 |
-| v1.0    | student in CS2040C                     | be able to study CS2040C according to their topic linkages in Visualgo | study the prerequisite topics for more advanced topics           |
-| v1.0    | efficiency-obsessed student in CS2040C | be able to find relevant topic notes easily                            | study the relevant topics efficiently                            |
-| v1.0    | user                                   | list all my notes                                                      | see the amount of content I have                                 |
-| v2.0    | organized student in CS2040C           | sort my notes according to level of importance                         | know which topics to study first when I am preparing for my exam |
+| Version | As a(n) ...                                              | I want to ...                                                               | So that I can ...                                                            |
+|---------|----------------------------------------------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| v1.0    | user                                                     | be able to add notes                                                        | view them later                                                              |
+| v1.0    | user                                                     | be able to delete notes                                                     | replace existing notes with new ones                                         |
+| v1.0    | user                                                     | be able to save my notes                                                    | reuse the saved data after closing and reopening the application             |
+| v1.0    | user                                                     | list all my notes                                                           | see the amount of content I have to study                                    |
+| v1.0    | first time user                                          | to be able to know how to use the application                               | N/A                                                                          |
+| v1.0    | tutor teaching CS2040C                                   | organize my notes according to their topic                                  | easily find the relevant content                                             |
+| v1.0    | student in CS2040C                                       | be able to study CS2040C according to their topic linkages in Visualgo      | study the prerequisite topics for more advanced topics                       |
+| v1.0    | efficiency-obsessed student in CS2040C                   | be able to find relevant topic notes easily                                 | study the relevant topics efficiently                                        |
+| v2.0    | organized student in CS2040C                             | be able to sort my notes according to level of importance                   | identify which topics to study first when I am preparing for my exam         |
+| v2.0    | As a student in CS2040C                                  | be able to list my notes in topological sort order                          | study the prerequisite topics first before studying the more advanced topics | 
+| v2.0    | As a CS2040C student with weekly programming assignments | be able to save my `.cpp` files                                             | refer to them in the future                                                  |
+| v2.0    | As a student in CS2040C                                  | be able to extract out relevant files into a folder                         | easily access them during revision                                           |
+| v2.0    | As an advanced user of CLIAlgo                           | be able to chain commands such that they will be executed one after another | use CLIAlgo more efficiently                                                 |
 
 ## Use Cases
 
@@ -91,7 +96,7 @@ command-line interface.
 _**Example:**_ `` Open in Terminal``
 3. Type: ``java -jar .\[NAME OF JAR FILE]`` where ``[NAME OF JAR FILE]``
 is the file name of the jar file.
-4. The appliction would then open in the command-line interface.
+4. The application would then open in the command-line interface.
 5. Note that if the application has initialised correctly, there would be a 
 `data` folder created with some `.txt` files in the same directory as the 
 jar file.
