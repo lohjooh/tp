@@ -27,6 +27,7 @@ public class TopicManager {
 
     private HashSet<String> allNotesOutsideTestMode;
     private HashMap<String, Topic> topicsOutsideTestMode;
+    private boolean isTestModeOn;
 
     /**
      * Constructor that initializes a <code>TopicManager</code> object that contains a HashMap of all the names of the
@@ -39,6 +40,7 @@ public class TopicManager {
         for (String topicName : TOPIC_NAMES) {
             topics.put(topicName, new Topic(topicName));
         }
+        isTestModeOn = false;
     }
 
     /**
@@ -51,6 +53,10 @@ public class TopicManager {
     public TopicManager(HashSet<String> allNotes, HashMap<String, Topic> topics) {
         this.allNotes = allNotes;
         this.topics = topics;
+    }
+
+    public boolean getIsTestModeOn() {
+        return this.isTestModeOn;
     }
 
 
@@ -218,6 +224,7 @@ public class TopicManager {
         for (String topicName : TOPIC_NAMES) {
             topics.put(topicName, new Topic(topicName));
         }
+        this.isTestModeOn = true;
     }
 
     /**
@@ -227,5 +234,6 @@ public class TopicManager {
     public void testModeEnd() {
         this.allNotes = allNotesOutsideTestMode;
         this.topics = topicsOutsideTestMode;
+        this.isTestModeOn = false;
     }
 }

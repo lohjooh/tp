@@ -349,4 +349,14 @@ public class Ui {
         System.out.println("Type 'help c/add' for how to add a note.");
         printDivider();
     }
+
+    /**
+     * Prints an error message to inform the user that the file does not exist.
+     */
+    public void printFileDoesNotExist() {
+        printDivider();
+        System.out.println("This file does not exist.");
+        System.out.println("Please add the file into the folder and try again.");
+        printDivider();
+    }
 }

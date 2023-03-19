@@ -746,4 +746,29 @@ class UiTest {
         }
         assertEquals(expectedOutput, actualOutput.toString());
     }
+
+    @Test
+    void printFileDoesNotExist() {
+        ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(actualOutput));
+
+        Ui ui = new Ui();
+        ui.printFileDoesNotExist();
+
+        String os = System.getProperty("os.name");
+        String expectedOutput = "";
+
+        if (os.contains("Windows")) {
+            expectedOutput = "======================================================\r\n" +
+                    "This file does not exist.\r\n" +
+                    "Please add the file into the folder and try again.\r\n" +
+                    "======================================================\r\n";
+        } else {
+            expectedOutput = "======================================================\n" +
+                    "This file does not exist.\n" +
+                    "Please add the file into the folder and try again.\n" +
+                    "======================================================\n";
+        }
+        assertEquals(expectedOutput, actualOutput.toString());
+    }
 }

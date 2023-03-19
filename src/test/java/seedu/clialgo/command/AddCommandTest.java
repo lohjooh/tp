@@ -1,6 +1,7 @@
 package seedu.clialgo.command;
 
 import org.junit.jupiter.api.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintStream;
@@ -55,14 +56,16 @@ class AddCommandTest {
      */
     @Test
     void execute_properInput_expectAddSuccessfulMessage() {
-        ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(actualOutput));
-
         String testDataPath = ".\\testdata";
         TopicManager topicManager = new TopicManager();
         Ui ui = new Ui();
         FileManager fileManager = new FileManager(testDataPath, topicManager.getTopicNames());
         fileManager.initialize();
+
+        new TestModeCommand().execute(topicManager, ui, fileManager);
+
+        ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(actualOutput));
 
         String actualNoteName = "queue";
         String actualNoteTopic = "LINKED_LIST";
@@ -93,14 +96,16 @@ class AddCommandTest {
      */
     @Test
     void execute_invalidTopicInput_expectAddUnsuccessfulDueToInvalidTopicMessage() {
-        ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(actualOutput));
-
         String testDataPath = ".\\testdata";
         TopicManager topicManager = new TopicManager();
         Ui ui = new Ui();
         FileManager fileManager = new FileManager(testDataPath, topicManager.getTopicNames());
         fileManager.initialize();
+
+        new TestModeCommand().execute(topicManager, ui, fileManager);
+
+        ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(actualOutput));
 
         String actualNoteName = "queue";
         String actualNoteTopic = "invalidTopic";
@@ -133,14 +138,16 @@ class AddCommandTest {
      */
     @Test
     void execute_repeatedInput_expectAddUnsuccessfulDueToInvalidCommandMessage() {
-        ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(actualOutput));
-
         String testDataPath = ".\\testdata";
         TopicManager topicManager = new TopicManager();
         Ui ui = new Ui();
         FileManager fileManager = new FileManager(testDataPath, topicManager.getTopicNames());
         fileManager.initialize();
+
+        new TestModeCommand().execute(topicManager, ui, fileManager);
+
+        ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(actualOutput));
 
         String actualNoteName = "queue";
         String actualNoteTopic = "LINKED_LIST";

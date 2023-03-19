@@ -1,7 +1,9 @@
 package seedu.clialgo.command;
 
 import java.util.Objects;
+import java.io.File;
 
+import seedu.clialgo.FileType;
 import seedu.clialgo.file.Note;
 import seedu.clialgo.TopicManager;
 import seedu.clialgo.storage.FileManager;
@@ -37,6 +39,24 @@ public class AddCommand extends Command {
     }
 
     /**
+     * Checks if the file exists as a .txt or .cpp.
+     *
+     * @return A <code>FileType</code> enum that determines whether the file DOESNOTEXIST, is a TXT or CPP file.
+     */
+    public FileType checkFileType() {
+        String pathInTxt = this.name + ".txt";
+        String pathInCpp = this.name + ".cpp";
+
+        if (new File(".\\" + pathInTxt).isFile()) {
+            return FileType.TXT;
+        } else if (new File(".\\" + pathInCpp).isFile()) {
+            return FileType.CPP;
+        } else {
+            return FileType.DOESNOTEXIST;
+        }
+    }
+
+    /**
      * An overridden method to execute the user command to add new notes into CLIAlgo.
      *
      * @param topicManager The <code>TopicManager</code> object which handles all notes stored in CLIAlgo.
@@ -47,6 +67,13 @@ public class AddCommand extends Command {
     public void execute(TopicManager topicManager, Ui ui, FileManager fileManager) {
         String notePath = name + ".txt";
         Note newNote = new Note(name, notePath, topic);
+        boolean isTestModeOn = topicManager.getIsTestModeOn();
+
+        // Check if the file exists
+        if ((checkFileType() == FileType.DOESNOTEXIST) && !isTestModeOn) {
+            ui.printFileDoesNotExist();
+            return;
+        }
 
         // Check if topicName is valid
         if (!topicManager.isValidTopic(topic)) {
@@ -74,6 +101,7 @@ public class AddCommand extends Command {
             new InvalidCommand().execute(topicManager, ui, fileManager);
             return;
         }
+
         assert this.name != null;
         assert this.topic != null;
         assert topicManager.isValidTopic(topic);

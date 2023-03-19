@@ -2,28 +2,59 @@
 Hello! Welcome to CLIAlgo Notes!
 ======================================================
 ======================================================
+Starting test mode.
+======================================================
+======================================================
 You have no notes!
 Type 'help c/add' for assistance on how to add a note.
 ======================================================
 ======================================================
-Successfully added sorting notes into SORTING.
+The filtered list is empty!
 ======================================================
 ======================================================
-Successfully added linked list notes into LINKED_LIST.
+The available COMMAND_TYPE(s) are:
+[add]: add note
+[remove]: remove note
+[list]: displays all notes
+[filter]: filters notes by topic
+[exit]: close the application
+For more help on a specific command, type `help c/COMMAND_TYPE`
 ======================================================
 ======================================================
 Unsuccessful! sorting is not a topic in CS2040C.
 Type 'help c/add' for assistance.
 ======================================================
 ======================================================
-Successfully added hash table notes into HASH_TABLE.
+This function adds a note and tags it to a topic.
+The syntax for the 'add' command is: add n/NAME t/TOPIC.
+NAME refers to the notes' file name.
+TOPIC refers to the topic that NAME will be tagged to.
+Case sensitive. NAME and TOPIC fields must be non-empty.
+Invalid NAME or TOPIC will cause an error.
+Valid TOPIC's are 'SORTING', 'LINKED_LIST', 'GRAPH_STRUCTURES',
+'BINARY_HEAP', 'HASH_TABLE', 'GRAPH_TRAVERSAL', 'BINARY_SEARCH_TREE',
+'SS_SHORTEST_PATH', 'UNION_FIND_DS' and 'MINIMUM_SPANNING_TREE'.
 ======================================================
 ======================================================
-Here are all your notes:
+This is an invalid command, please ensure all your fields are correct.
+Type 'help' for additional assistance.
 ======================================================
-1. hash table notes
-2. sorting notes
-3. linked list notes
+======================================================
+The filtered list is empty!
+======================================================
+======================================================
+Unsuccessful! LINKED LIST is not a topic in CS2040C.
+Type 'help c/add' for assistance.
+======================================================
+======================================================
+This function removes a note from the tagged topic.
+The syntax for the 'remove' command is: remove n/NAME.
+NAME refers to the notes' file name.
+'n/' must be included else NAME will not be read.
+Invalid NAME will cause an error.
+======================================================
+======================================================
+The filtered list is empty!
 ======================================================
 ======================================================
 Unsuccessful! A note of that name does not exist.
@@ -31,39 +62,11 @@ Only notes in your list can be removed.
 Type 'list' to see notes you can remove.
 ======================================================
 ======================================================
-Successfully removed linked list notes.
+You have no notes!
+Type 'help c/add' for assistance on how to add a note.
 ======================================================
 ======================================================
-Here are all your notes:
-======================================================
-1. hash table notes
-2. sorting notes
-======================================================
-======================================================
-Here are the filtered notes:
-======================================================
-[HASH_TABLE]
-1. hash table notes
-[SORTING]
-1. sorting notes
-======================================================
-======================================================
-Here are the filtered notes:
-======================================================
-[SORTING]
-1. sorting notes
-======================================================
-======================================================
-Successfully removed hash table notes.
-======================================================
-======================================================
-Here are all your notes:
-======================================================
-1. sorting notes
-======================================================
-======================================================
-Unsuccessful! A note with that name already exists.
-Type 'list' to view the list of notes.
+Successfully added sorting notes into SORTING.
 ======================================================
 ======================================================
 This function adds a note and tags it to a topic.
@@ -89,6 +92,21 @@ Type 'help c/add' for assistance.
 ======================================================
 Unsuccessful!
 Type 'help c/filter' for assistance.
+======================================================
+======================================================
+Successfully removed sorting notes.
+======================================================
+======================================================
+Unsuccessful! A note of that name does not exist.
+Only notes in your list can be removed.
+Type 'list' to see notes you can remove.
+======================================================
+======================================================
+Ending test mode.
+======================================================
+======================================================
+Successfully deleted file.
+======================================================
 ======================================================
 ======================================================
 Thank you for using CLIAlgo! Study hard!
