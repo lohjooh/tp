@@ -6,8 +6,19 @@
 
 ## Design & implementation
 
-{Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
+### FileManager (Storage) component
+API : `FileManager.java`
 
+The file manager can
+- Save the added `Notes` in a `.txt` file and read them 
+back into the corresponding objects
+- All the `Notes` data are stored according to the `Topic` that the 
+`Notes` are tagged to
+- `Notes` are encoded by a `FileEncoder` object before being written to
+the corresponding `Topic` `.txt` file
+- `Notes` read from the `Topic` `.txt` are decoded by a `FileDecoder`
+object before being converted back into a `Note` object
+  - The `Note` is passed to the corresponding `TopicManager` object
 
 ## Product scope
 ### Target user profile

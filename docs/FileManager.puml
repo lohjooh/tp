@@ -1,0 +1,8 @@
+@startuml
+
+class FileManager {
+    +Ui: ui
+
+}
+
+@enduml
